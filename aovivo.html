@@ -129,6 +129,8 @@ ysyss
 
 <!-- CAPTCHA -->
 <script src='https://www.google.com/recaptcha/api.js'></script>
+<link rel="stylesheet" href="css/plyr.css" />
+
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127163087-2"></script>
@@ -161,7 +163,7 @@ ysyss
           <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-5 toggles">
               <nav>
                   <ul>
-                      <li><a href="javascript:void(0)" onclick="localStorage.setItem('logadoAoVivo','nao'); location.reload()" title="Sair">Sair</a></li>
+                      <li><a href="javascript:void(0)" onclick="window.close();" title="Fechar">Fechar</a></li>
                   </ul>
               </nav>
           </div>
@@ -195,7 +197,7 @@ ysyss
           <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-5 toggles">
               <nav>
                   <ul>
-                     <li><a href="javascript:void(0)" onclick="location.reload();" title="Sair">Sair</a></li>
+                     <li><a href="javascript:void(0)" onclick="window.close();" title="Fechar">Fechar</a></li>
                   </ul>
               </nav>
           </div>
@@ -219,37 +221,23 @@ ysyss
                <img src="images/logo-aovivo.png" alt="Congresso digital" />
              </p>
              <h1 id="tituloPagina">
-               <small>CONGRESSO DIGITAL</small>
-               SALAS DE TRANSMISSÃO AO VIVO
+               <small></small>
+               <span></span>
              </h1>
          </div>
        </div>
        <!-- TITULO -->
 
        <div class="row">
-           
-           <!-- COLUNA UM -->
-           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 coluna-um">
+          <div class="col-12" id="salaVideo">
               
-              <!-- SALA ACTIVE -->
-              <div class="sala" id="salaActive">
+              <div class="plyr__video-embed" id="player">
               </div>
-              <!-- SALA ACTIVE -->
 
-              <!-- PROGRAMAÇÃO -->
-              <div class="programacao" id="programacao">
-              </div>
-              <!-- PROGRAMAÇÃO -->
-
-           </div>
-           <!-- COLUNA UM -->
-
-           <!-- COLUNA DOIS -->
-           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 coluna-dois" id="listaSalas">
-           </div>
-           <!-- COLUNA DOIS -->
-
+          </div>
        </div>
+
+
 
    </div>
 
@@ -257,29 +245,7 @@ ysyss
 <!-- SALAS -->
 
 
-<!-- EXPOSITORES -->
-<section class="expositores">
-   
-   <div class="container">
-       
-       <!-- TÍTULO DA SESSÃO -->
-     <div class="row titulo">
-        <div class="col-12">
-          <h2>ÁREA DE EXPOSITORES <small>Conheça e entre em contato com nossos expositores</small></h2>
-        </div>
-     </div>
-     <!-- TÍTULO DA SESSÃO -->
 
-     <!-- LISTA -->
-     <div class="row lista-expositores" id="listaExpositores">
-     </div>
-     <!-- LISTA -->
-
-
-   </div>
-
-</section>
-<!-- EXPOSITORES -->
 
 
 <!-- LINKS DOWNLOAD LOJAS DE APPS -->
@@ -352,54 +318,13 @@ ysyss
 <!-- RODAPE -->
 
 
-<!-- LOGIN -->
-<section class="login-aovivo">
-   <div class="caixa-login">
-      <!-- LOGOS -->
-      <div class="row">
-         <div class="col-8">
-            <img src="images/logo-bc-2.svg" alt="Beauty Connect Logo" style="width: 120px;height: auto;">
-         </div>
-         <div class="col-4 text-right">
-            <img src="images/logo-aovivo.png" alt="Congresso digital" style="width: 46px;height: auto;" />
-         </div>
-      </div>
-      <!-- LOGOS -->
-
-      <div class="alerta-retorno" id="alertaRetorno" style="margin-top: 20px;">
-      </div>
-
-      <form method="post" onsubmit="app.login(event)">
-         
-         <div class="form-group">
-            <label>E-mail cadastrado</label>
-            <input type="email" class="form-control" id="emailLogin" placeholder="Seu e-mail cadastrado" required> 
-         </div>
-
-         <div class="form-group text-center">
-            <button type="submit" class="btn btn-primary">
-               Acessar
-            </button>
-         </div>
-
-         <div class="form-group text-center">
-            Não tem uma conta? 
-            <a href="https://beautysummit360digital.beautyconnect.com.br/" target="_blank" title="Não tem uma conta? Cadastre-se">
-              Cadastre-se
-            </a>
-         </div>
-        
-      </form>
-   </div>
-</section>
-<!-- LOGIN -->
 
 
 
     <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
     <script type="text/javascript" src="js/tether.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-
+    <script src="js/plyr.js"></script>
     <script src="js/dist/jquery.inputmask.bundle.js"></script>
     <script src="js/dist/inputmask/phone-codes/phone.js"></script>
 
@@ -413,6 +338,37 @@ ysyss
     <script type="text/javascript" src="js/wow.min.js"></script>
     <script>
          new WOW().init();
+
+         if(localStorage.getItem("logadoAoVivo")!="sim"){
+            alert("Você ainda não se identificou");
+            location.href="index.html?c=13";
+         }else{
+               
+            let evento = JSON.parse(localStorage.getItem("evento"));
+            let aovivo = JSON.parse(localStorage.getItem("aovivo"));
+
+            $("#tituloPagina small").html(evento[0].nome);
+            
+            let url_string = window.location.href;
+            let url = new URL(url_string);
+            let c = url.searchParams.get("c");
+            console.log("URL ID: "+c);
+
+            for(var i = 0;i<aovivo.length;i++){
+                
+                if(c==aovivo[i].id){
+                   $("#tituloPagina span").html(aovivo[i].nome_sala+": "+aovivo[i].tema);
+                   $("#salaVideo #player").html(aovivo[i].iframe);
+                   const player = new Plyr('#player', {
+                      title: aovivo[i].tema,
+                   });
+                }
+
+            }          
+
+         }
+
+
     </script>
 
     <script type="text/javascript" src="js/jquery.animateNumber.min.js"></script>  
@@ -422,10 +378,6 @@ ysyss
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/utils/Draggable.min.js" type="text/javascript"></script>
     <script type="text/javascript" src="js/sweetalert2.min.js"></script>
     
-
-    <script type="text/javascript">
-        var evento = 13;
-    </script>
     
     <script src="view/View.js" type="text/javascript"></script>   
     
