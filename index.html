@@ -1,0 +1,652 @@
+<!--
+#
+                             `..-://++ooosssoooo++/:--..`                                           
+                        ``-:++oossssssssssssssssssssssoo++/:-``                                     
+                     `.:+osssssssssssssssssssssssssssssssssssso/:-.                                 
+                   .:+osssssssssssssssssssssssssssssssssssssssssssoo/-.`                            
+                 `:osssssssssssssssssssssssssssssssssssssssssssssssssso+/-`                         
+               ./osssssssssssssssssssssssssssssssssssssssssssssssssssssssso+-.`                     
+             `:ossssssssssssssssssssssssssssssssssssssssssssssssssssssssssssso+:`                   
+           `.+ssssssssssssssssssssssssooosssssssssssssssssssssssooossssssssssssss/-`                
+          `:ossssssssssssssssssso+/-.````.-+ossssssssssssssso+:.````.-/+osssssssssso/.              
+         `+ossssssssssssssssss+:.           -+sssssssssssso/.`         `-+osssssssssss/.`           
+       `.ossssssssssssssssss+-`              -ossssssssss+.              `-ossssssssssss+:`         
+       -ossssssssssssssssso/`                -+sssssssso/`                `.ssssssssssssso+.        
+      :osssssssssssssssss+-                  .+sssssss+:                    +ossssssssssssso:`      
+     :osssssssssssssssss+-          `        -+ssssss+-          `          /osssssssssssssso/.     
+    .ossssssssssssssssso.         .://       -osssss+`        .://-         +osssssssssssssssso`    
+   .ossssssssssssssssso-         :osss`     `:sssso/`      `./osso:        `sssssssssssssssssss+.   
+  .:ssssssssssssssssso:        `:sssso      ./ssso/`      `:osssso`       `:ssssssssssssssssssss/.  
+  :osssssssssssssssso:        `:sssso/      ./ss+-`      `+ossss+:        -osssssssssssssssssssss:` 
+ -+sssssssssssssssss/.       `:ossss+.      .:o/`       `ossssso/`       -/ssssssssssssssssssssss+- 
+ /osssssssssssssssso.        :+sssss/         `        .+ssssss/.       `/ssssssssssssssssssssssso/ 
+.+sssssssssssssssss-`       .ossssso:                `:ossssss+.        /ossssssssssssssssssssssss+.
+:osssssssssssssssso        `/ssssss+-                /osssssss.`       :ossssssssssssssssssssssssso:
++ossssssssssssssso-       `-sssssss+-              `/osssssso:       `-ssssssssssssssssssssssssssso/
+ossssssssssssssss/        .+sssssss+:             ./ssssssso/        -ossssssssssssssssssssssssssso/
+osssssssssssssss+-       `:sssssssso/            -+ssssssss/`       -+sssssssssssssssssssssssssssso+
+ssssssssssssssss/`       -+ssssssssso/`       `.+ossssssss/.       .+ssssssssssssssssssssssssssssso/
+osssssssssssssss:        :osssssssssss+:.``.-:+sssssssssso.        /ossssssssssssssssssssssssssssso:
++osssssssssssss+-       `+sssssssssssssssssssssssssssssss:`       .ossssssssssssssssssssssssssssss+.
+:osssssssssssss/.       .+sssssssssssssssssssssssssssssso`       `/sssssssssssssssssssssssssssssss+ 
+.+sssssssssssss:.       -+ssssssssssssssssssssssssssssso/        .ssssssssssssssssssssssssssssssso: 
+ /ossssssssssss:`       .+ssssssssssssssssssssssssssssso:       `-sssssssssssssssssssssssssssssss/. 
+ -+ssssssssssss:`       `/sssssssssssssssssssssssssssss+-       `-sssssssssssssssssssssssssssssso-  
+  -osssssssssss:.        ./osssssoooossssssssssssssssss+-        `/ossssssooosssssssssssssssssss:`  
+  `-sssssssssss/.         `.://:-...-/osssssssssssssssso:         `-:///-....:+ssssssssssssssss+`   
+   `-ossssssssso-                     -ossssssssssssssso+                     .:sssssssssssssso`    
+     :+sssssssss/.                     /ossssssssssssssss-`                    .ossssssssssss+-     
+      ./sssssssso/`                    /osssssssssssssssso.                    .osssssssssss+-      
+       `-+ssssssso+.                  -osssssssssssssssssso:`                 ./sssssssssss/.       
+         `:+ssssssso:.              ./osssssssssssssssssssso+-               -+ossssssssso/`        
+           `-/sssssssso/-.````...-/+ossssssssssssssssssssssssso/:-.`````..-:ossssssssssso:          
+             `-/ossssssssoooooooosssssssssssssssssssssssssssssssssoooooooosssssssssssso/-           
+                .-/sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssso-`            
+                   .:+osssssssssssssssssssssssssssssssssssssssssssssssssssssssssssso/`              
+                     `.-+ossssssssssssssssssssssssssssssssssssssssssssssssssssssso/.                
+                         `.:/oossssssssssssssssssssssssssssssssssssssssssssssso+/`                  
+                             `.-/ooosssssssssssssssssssssssssssssssssssssssoo/-`                    
+                                  `.-/+oossssssssssssssssssssssssssssssso+:-                        
+                                       ```.-:/+++ooooossssssssoooo++/:-``                           
+                                        /sdmmhs+.                                                   
+                                     `.hmmmmmmmmmd/.                                                
+                                   odmmmmmmmmmmmmmmmy`                                              
+                                 +dmmmmmmmmmmmmdmmmmmo                                              
+                                 /mmmmmmmmmmmss+smmmmd                                              
+                            `.   -ohmddssmmy/+oo/ommmh`                                             
+                          `::o: -//:++/+//+//+s//osmm/                                              
+                        `:/hdhsoho+so//o////////ssyo.                                               
+                       `/ydmmmmhoso/oy/oo///++s/. ossoo/-                                           
+                     `odmmmmmmmmdsh+/+y/+so/sy`  `soo++oss                                          
+               -ssydddmmmmmdddmmmmd+//y/ossmmm+    +o+ss+-                                          
+                ymmmmmmmmy+///+sdmmh//os++mmmmmo  -o/s.                                             
+              --+ymmmmmmys+/////smmmyso+symmds++o.o/o-                                              
+                -oodmmmo////////+mmmdshhydmm+///yo/+/                                               
+               +o/ymmms//oo//////ymmmmmmmmmm++sosooy`                                               
+              :o/+dmmmo/oy//////+mmmmmmmmmmyso/+osoo/                                               
+            `+hssdmmmmo+y///////+mmmmmmmmmyy////+++y-                                               
+          -hdmmmmmmmmm+y+/s//+sosdmmmmmmdho/////+oos                                                
+         .+yddhmmmmmmdoo//soo+yoysdyho+///////+ssooy:                                               
+         .``.y/+mmmmmhso/+ho/+yooyyy///////oshoo+/+++y       .o+                                    
+            o+++mmmmmyy++h+/os/yoys+/////osos+/oso++oy:      :mh.`                                  
+           :o+++yyso+y+/ss/+s/+y+yy///oydo/y//os//////++/:://omd+o-                                 
+           s+/-:+/syhdy+so/so/+hssosoysymmhhooho+///////o//+sohso+/                                 
+         .o++hmdmdmmmmmmdd+++os/+oyoosodmmmmmmmmmmyosooooo++/:sooos                                 
+        `y++yoydmmmmmmmmmmmdhddyymmmddmmmmmmmmmmmh+yyyyyo.   `dy+/-----::-                          
+        /os/s/+odmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmd/syyyyyyh-  -mh::-.:+:..:y.                        
+        soo+s//soymmmmmmmmmmmmmmmmmmmmmmmmmmmmmmy+hyyyyyyh/:o/hh+/+s+-....so::::::                  
+       .soo+s///osoydmmmmmmmmmmmmmhyssyydmmmmddhohyyyhhs/-:/s//-/sooo/..:yyoooooydo:--------::.     
+       ++oo/s+////ooooydmmmmmmdyo+//++ooosyys+sysssssy:/oo+s/+s+/:--.-+yhyyyyyyhmmyooooooooooos:    
+       s/o+/+s//////++//+ossososysyyhyyyyyyyyhhoooooy-....++/:...-/oyhysssssssshmmyoooooooooooos:   
+   `/++h+os//oo+/////oo+/oossosyyyyyyyyyyyyyyyyhhoooso-.../-:/+shhyssssssssssssymyooooooooooossos:  
+  -dysosyyyyso+oooo+ssso+/++yhyyyyyyyyyyyyyyyyyyydoooosysyyyysooyyyyyyyyyyyyyyyysooooooooooooosssh: 
+ /hssssssssssssssssyoooossyyyyhhyyyyyyyyyyyyyyyyyhysssssssssssssssssssssssssssssssssssssyyyyyydhhyh 
+ hyhhhshshhydhhhhhhhyhhyhhhyhhyhdhhhhhyyyyyyyyyyyydhhhhyhhhyhhhyhhyhhyhhyyyhyyhsyyyhhshshhhhyhhhyyh`
+ hyhhhshshhshhhyyyyhyyhshhhshyyhhhshhshyyhyyyyyyyyydhhhyhhhyhhhyhhyhhyhhhhhhhhhyhhhhhydyhdddhddy/:. 
+ ooydhhhdddhddssssssoooooooooo+o+ydddhhhhdyyyyyyyyyyd+:::::::::--------..........````.dhyyhysoos    
+   sooyhhsyhdo                   hhddddhhhhyyyyyyyyyyh.                               ohhysdysos:   
+  .yoosdyshhd`                 .shyyhhyhd--hyyyyyyyyyyh.                              .dhhsyysooy`  
+  oooshhsyhdo                 /hyyyyyyyyyy+odhyyyyyyyyyh:                              syyysdysoo+  
+ `yosydyyyyd`                 -syhyyyhhyyyyyyhhhhyyyyyyyh+````                         -hshyhhoooy. 
+ oooshssyss:                          `:/+/:-::-.:+yyyyyyyhdddy.    .-::-.`             .:-` +oooos 
+`yoooh                                              -syhyyyyhhhhssyhhyyyyh/                  `yooos/
++osoy-                                                ohyyyhhdhdyyyyyyyhy-                    /sosoy
+ysyss
+#
+#
+# DIOGENES OLIVEIRA DOS SANTOS JUNIOR
+# WWW.DIOGENESJUNIOR.COM.BR
+# CONTATO@DIOGENESJUNIOR.COM.BR
+#
+#
+-->
+<!DOCTYPE html>
+<html lang="pt-br"><head>
+<title>Beauty Connect</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#D40F7D">
+
+<!-- FAVICON -->
+<link rel="shortcut icon" href="images/favicon.png">
+
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css" media="all" />
+
+<link rel="stylesheet" type="text/css" href="css/style.css?v=2" />
+<link rel="stylesheet" type="text/css" href="css/sweetalert2.min.css">
+<!-- ICONES -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+
+<!-- GOOGLE FONTS -->
+<link href="https://fonts.googleapis.com/css?family=Muli:300,400,600,700,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">   
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
+
+<!-- AOS -->
+<link href="css/aos.css" rel="stylesheet">
+
+<!-- CAPTCHA -->
+<script src='https://www.google.com/recaptcha/api.js'></script>
+
+</head>
+<body>
+
+<!-- HEADERS -->
+<header id="header" class="super-banner">
+  
+  <div class="container">
+      <div class="row">
+          
+          <!-- LOGO -->
+          <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-7 logo">
+              <a href="index.html" title="Beauty Connect">
+                  <img src="images/logo-bc.svg" alt="Beauty Connect Logo">
+              </a>
+          </div>
+          <!-- LOGO -->
+
+          <!-- TOGGLES -->
+          <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-5 toggles">
+              <nav>
+                  <ul>
+                      <li><a href="javascript:void(0)" onclick="location.reload()" title="Sair">Sair</a></li>
+                  </ul>
+              </nav>
+          </div>
+          <!-- TOGGLES -->
+
+      </div>
+  </div>
+    
+</header>
+
+<header id="headerFixo" class="header-fixo">
+
+    <div class="container">
+      <div class="row">
+          
+          <!-- LOGO -->
+          <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-7 logo">
+              <a href="index.html" title="Beauty Connect">
+                  <img src="images/logo-bc-2.svg" alt="Beauty Connect Logo">
+              </a>
+          </div>
+          <!-- LOGO -->
+
+          <!-- FRASE CHAMADA DESTAQUE -->
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 frase-de-destaque esconder-mobile">
+              <h1><span>Experimente</span> a Beauty Connect no seu celular!</h1>
+          </div>
+          <!-- FRASE CHAMADA DESTAQUE -->
+
+          <!-- TOGGLES -->
+          <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-5 toggles">
+              <nav>
+                  <ul>
+                     <li><a href="javascript:void(0)" onclick="location.reload();" title="Sair">Sair</a></li>
+                  </ul>
+              </nav>
+          </div>
+          <!-- TOGGLES -->
+
+      </div>
+  </div>
+    
+</header>
+<!-- HEADERS -->
+
+<!-- SALAS -->
+<section  class="salas">
+     
+   <div class="container">
+       
+       <!-- TITULO -->
+       <div class="row">
+         <div class="col-12 titulo-congresso-digital text-center">
+             <p>
+               <img src="images/logo-aovivo.png" alt="Congresso digital" />
+             </p>
+             <h1>
+               <small>CONGRESSO DIGITAL</small>
+               SALAS DE TRANSMISSÃO AO VIVO
+             </h1>
+         </div>
+       </div>
+       <!-- TITULO -->
+
+       <div class="row">
+           
+           <!-- COLUNA UM -->
+           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 coluna-um">
+              
+              <!-- SALA ACTIVE -->
+              <div class="sala" id="salaActive">
+                 <h2>SALA 1 - PLENÁRIA</h2>
+                 <a href="" title="ASSISTIR PALESTRA AO VIVO">
+                    ASSISTIR PALESTRA AO VIVO
+                 </a>
+              </div>
+              <!-- SALA ACTIVE -->
+
+              <!-- PROGRAMAÇÃO -->
+              <div class="programacao" id="programacao">
+                  
+                  <h2 class="titulo">Programação - PLENÁRIA</h2>
+                  <div class="scroll" id="scroll">
+                     
+                     <h4>18 de Julho</h4>
+                     <p>
+                       10h30 - ABERTURA;<br>
+                       11h - GISLAINE RICCI - Cosmetologia: Ciência que ajuda na manutenção da saúde e dos sinais de juventude da pele<br>
+                       12h30 - VANESSA MONTEIRO - Estética paliativa, um serviço essencial<br>
+                       14h - IVONE MOSER - Gluco: O peeling universal do Século XXI<br>
+                       15h30 - DANIELLA RETTUR - A importância do Marketing além do Instante<br>
+                       17h - CARLA LEONE - Melasma - Fisiopatologia e Tratamento<br>
+                       18h30 - YNAIÃ PIEDADE - Tratamento de gordura localizada e Celulite com Intradermoterapia pressurizada<br>
+                       19h30 - ENCERRAMENTO    
+                     </p>
+                  </div>
+
+              </div>
+              <!-- PROGRAMAÇÃO -->
+
+           </div>
+           <!-- COLUNA UM -->
+
+           <!-- COLUNA DOIS -->
+           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 coluna-dois" id="listaSalas">
+
+               <!-- SALA -->
+              <div class="sala">
+                 <h2>SALA 2 - WORKSHOP</h2>
+                 <a href="" title="TEMA DO WORKSHOP">
+                    TEMA DO WORKSHOP
+                 </a>
+              </div>
+              <!-- SALA -->
+
+                <!-- SALA -->
+              <div class="sala">
+                 <h2>SALA 3 - WORKSHOP</h2>
+                 <a href="" title="TEMA DO WORKSHOP">
+                    TEMA DO WORKSHOP
+                 </a>
+              </div>
+              <!-- SALA -->
+
+                <!-- SALA -->
+              <div class="sala">
+                 <h2>SALA 4 - WORKSHOP</h2>
+                 <a href="" title="TEMA DO WORKSHOP">
+                    TEMA DO WORKSHOP
+                 </a>
+              </div>
+              <!-- SALA -->
+
+                <!-- SALA -->
+              <div class="sala">
+                 <h2>SALA 5 - WORKSHOP</h2>
+                 <a href="" title="TEMA DO WORKSHOP">
+                    TEMA DO WORKSHOP
+                 </a>
+              </div>
+              <!-- SALA -->
+             
+           </div>
+           <!-- COLUNA DOIS -->
+
+       </div>
+
+
+   </div>
+
+</section>  
+<!-- SALAS -->
+
+
+<!-- EXPOSITORES -->
+<section class="expositores">
+   
+   <div class="container">
+       
+       <!-- TÍTULO DA SESSÃO -->
+     <div class="row titulo">
+        <div class="col-12">
+          <h2>ÁREA DE EXPOSITORES <small>Conheça e entre em contato com nossos expositores</small></h2>
+        </div>
+     </div>
+     <!-- TÍTULO DA SESSÃO -->
+
+     <!-- LISTA -->
+     <div class="row lista-expositores" id="listaExpositores">
+         
+         <!-- EXPOSITOR -->
+         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 expositor">
+            <div class="logo-expositor" style="background:url('images/logo-expositor.png') transparent no-repeat;background-size: 200px auto;background-position: center center;">
+               &nbsp;
+            </div>
+            <p>
+              <a href="#" title="Apresentação" class="btn btn-default" target="_blank">
+                APRESENTAÇÃO
+              </a>
+            </p>
+            <p>
+              <a href="#" title="Atendimento" class="btn btn-default" target="_blank">
+                ATENDIMENTO
+              </a>
+            </p>
+         </div>
+         <!-- EXPOSITOR -->
+
+
+         <!-- EXPOSITOR -->
+         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 expositor">
+            <div class="logo-expositor" style="background:url('images/logo-expositor.png') transparent no-repeat;background-size: 200px auto;background-position: center center;">
+               &nbsp;
+            </div>
+            <p>
+              <a href="#" title="Apresentação" class="btn btn-default" target="_blank">
+                APRESENTAÇÃO
+              </a>
+            </p>
+            <p>
+              <a href="#" title="Atendimento" class="btn btn-default" target="_blank">
+                ATENDIMENTO
+              </a>
+            </p>
+         </div>
+         <!-- EXPOSITOR -->
+
+         <!-- EXPOSITOR -->
+         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 expositor">
+            <div class="logo-expositor" style="background:url('images/logo-expositor.png') transparent no-repeat;background-size: 200px auto;background-position: center center;">
+               &nbsp;
+            </div>
+            <p>
+              <a href="#" title="Apresentação" class="btn btn-default" target="_blank">
+                APRESENTAÇÃO
+              </a>
+            </p>
+            <p>
+              <a href="#" title="Atendimento" class="btn btn-default" target="_blank">
+                ATENDIMENTO
+              </a>
+            </p>
+         </div>
+         <!-- EXPOSITOR -->
+
+         <!-- EXPOSITOR -->
+         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 expositor">
+            <div class="logo-expositor" style="background:url('images/logo-expositor.png') transparent no-repeat;background-size: 200px auto;background-position: center center;">
+               &nbsp;
+            </div>
+            <p>
+              <a href="#" title="Apresentação" class="btn btn-default" target="_blank">
+                APRESENTAÇÃO
+              </a>
+            </p>
+            <p>
+              <a href="#" title="Atendimento" class="btn btn-default" target="_blank">
+                ATENDIMENTO
+              </a>
+            </p>
+         </div>
+         <!-- EXPOSITOR -->
+
+         <!-- EXPOSITOR -->
+         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 expositor">
+            <div class="logo-expositor" style="background:url('images/logo-expositor.png') transparent no-repeat;background-size: 200px auto;background-position: center center;">
+               &nbsp;
+            </div>
+            <p>
+              <a href="#" title="Apresentação" class="btn btn-default" target="_blank">
+                APRESENTAÇÃO
+              </a>
+            </p>
+            <p>
+              <a href="#" title="Atendimento" class="btn btn-default" target="_blank">
+                ATENDIMENTO
+              </a>
+            </p>
+         </div>
+         <!-- EXPOSITOR -->
+
+         <!-- EXPOSITOR -->
+         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 expositor">
+            <div class="logo-expositor" style="background:url('images/logo-expositor.png') transparent no-repeat;background-size: 200px auto;background-position: center center;">
+               &nbsp;
+            </div>
+            <p>
+              <a href="#" title="Apresentação" class="btn btn-default" target="_blank">
+                APRESENTAÇÃO
+              </a>
+            </p>
+            <p>
+              <a href="#" title="Atendimento" class="btn btn-default" target="_blank">
+                ATENDIMENTO
+              </a>
+            </p>
+         </div>
+         <!-- EXPOSITOR -->
+
+
+         <!-- EXPOSITOR -->
+         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 expositor">
+            <div class="logo-expositor" style="background:url('images/logo-expositor.png') transparent no-repeat;background-size: 200px auto;background-position: center center;">
+               &nbsp;
+            </div>
+            <p>
+              <a href="#" title="Apresentação" class="btn btn-default" target="_blank">
+                APRESENTAÇÃO
+              </a>
+            </p>
+            <p>
+              <a href="#" title="Atendimento" class="btn btn-default" target="_blank">
+                ATENDIMENTO
+              </a>
+            </p>
+         </div>
+         <!-- EXPOSITOR -->
+
+         <!-- EXPOSITOR -->
+         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 expositor">
+            <div class="logo-expositor" style="background:url('images/logo-expositor.png') transparent no-repeat;background-size: 200px auto;background-position: center center;">
+               &nbsp;
+            </div>
+            <p>
+              <a href="#" title="Apresentação" class="btn btn-default" target="_blank">
+                APRESENTAÇÃO
+              </a>
+            </p>
+            <p>
+              <a href="#" title="Atendimento" class="btn btn-default" target="_blank">
+                ATENDIMENTO
+              </a>
+            </p>
+         </div>
+         <!-- EXPOSITOR -->
+
+         <!-- EXPOSITOR -->
+         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 expositor">
+            <div class="logo-expositor" style="background:url('images/logo-expositor.png') transparent no-repeat;background-size: 200px auto;background-position: center center;">
+               &nbsp;
+            </div>
+            <p>
+              <a href="#" title="Apresentação" class="btn btn-default" target="_blank">
+                APRESENTAÇÃO
+              </a>
+            </p>
+            <p>
+              <a href="#" title="Atendimento" class="btn btn-default" target="_blank">
+                ATENDIMENTO
+              </a>
+            </p>
+         </div>
+         <!-- EXPOSITOR -->
+
+
+
+
+     </div>
+     <!-- LISTA -->
+
+
+   </div>
+
+</section>
+<!-- EXPOSITORES -->
+
+
+<!-- LINKS DOWNLOAD LOJAS DE APPS -->
+<section class="lojas-apps" id="container2">
+    
+    <div class="container">
+       
+       <div class="row">
+         
+         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 offset-xl-7 offset-lg-7 offset-md-7 offset-sm-7 col-12 coluna">
+            
+            <h2>
+              Entre para a maior rede de profissionais de estética do Brasil!
+            </h2>
+            <!--
+            <p class="text">
+              <img src="images/check-lojas.svg" alt="Faça o download do nosso aplicativo!"> Lorem ipsum <br clear="both">
+              <img src="images/check-lojas.svg" alt="Faça o download do nosso aplicativo!"> Dolor sit amet <br clear="both">
+              <img src="images/check-lojas.svg" alt="Faça o download do nosso aplicativo!"> Consectetur adipisicin <br clear="both">
+              <img src="images/check-lojas.svg" alt="Faça o download do nosso aplicativo!"> Sed do eiusmo <br clear="both">
+              <img src="images/check-lojas.svg" alt="Faça o download do nosso aplicativo!"> Tempor incididunt <br clear="both">
+            </p>
+          -->
+
+            <div class="lojas">
+                
+                <p>
+                  <a href="#" title="Faça o download na GooglePlay" target="_blank">
+                    <img src="images/download-google-play-png-6.svg" alt="GooglePlay logo">
+                  </a>
+                </p>
+
+                <p>
+                  <a href="#" title="Faça o download na Apple" target="_blank">
+                    <img src="images/download-apple.svg" alt="Apple logo">
+                  </a>
+                </p>
+
+            </div>
+
+         </div>
+
+       </div>
+
+    </div>
+
+    <img id="slide2" src="images/mockup_app.svg" alt="A SUA PLATAFORMA COMPLETA PARA EVENTOS DE ESTÉTICA">
+
+</section>
+<!-- LINKS DOWNLOAD LOJAS DE APPS -->
+
+
+
+<!-- RODAPE -->
+<footer>
+  <div class="container">
+    <div class="row">
+        
+        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 offset-xl-2 offset-lg-2 offset-md-2 offset-sm-2 col-12 corpy">
+          <p>Beauty Connect - Todos os direitos reservados © | E-mail: contato@beautyconnect.com.br | Telefone: (19) 9 8164-4582</p>
+        </div>
+        <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12 mangu">
+            <a href="https://www.mangu.com.br" target="_blank" alt="Site desenvolvido por Mangu Brand">
+               <img src="images/mangu_svg.svg" alt="Mangu Brand Logo">
+            </a>
+        </div>
+    </div>
+  </div>
+</footer>     
+<!-- RODAPE -->
+
+
+<!-- LOGIN -->
+<section class="login-aovivo">
+   <div class="caixa-login">
+      <!-- LOGOS -->
+      <div class="row">
+         <div class="col-8">
+            <img src="images/logo-bc-2.svg" alt="Beauty Connect Logo" style="width: 120px;height: auto;">
+         </div>
+         <div class="col-4 text-right">
+            <img src="images/logo-aovivo.png" alt="Congresso digital" style="width: 46px;height: auto;" />
+         </div>
+      </div>
+      <!-- LOGOS -->
+
+      <div class="alerta-retorno" id="alertaRetorno" style="margin-top: 20px;">
+      </div>
+
+      <form method="post" onsubmit="app.login(event)">
+         
+         <div class="form-group">
+            <label>E-mail cadastrado</label>
+            <input type="email" class="form-control" id="emailLogin" placeholder="Seu e-mail cadastrado" required> 
+         </div>
+
+         <div class="form-group text-center">
+            <button type="submit" class="btn btn-primary">
+               Acessar
+            </button>
+         </div>
+
+         <div class="form-group text-center">
+            Não tem uma conta? 
+            <a href="https://beautysummit360digital.beautyconnect.com.br/" target="_blank" title="Não tem uma conta? Cadastre-se">
+              Cadastre-se
+            </a>
+         </div>
+        
+      </form>
+   </div>
+</section>
+<!-- LOGIN -->
+
+
+
+    <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="js/tether.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <script src="js/dist/jquery.inputmask.bundle.js"></script>
+    <script src="js/dist/inputmask/phone-codes/phone.js"></script>
+
+    <!-- AOS -->
+    <script src="js/aos.js"></script>
+    <script>
+      AOS.init({disable: 'mobile'});
+    </script>
+    
+    <!-- WOW -->
+    <script type="text/javascript" src="js/wow.min.js"></script>
+    <script>
+         new WOW().init();
+    </script>
+
+    <script type="text/javascript" src="js/jquery.animateNumber.min.js"></script>  
+    
+    <!-- PARALLAX -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/utils/Draggable.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/sweetalert2.min.js"></script>
+    
+
+    <script type="text/javascript">
+        var evento = 13;
+    </script>
+    
+    <script src="view/View.js" type="text/javascript"></script>   
+    
+    <script type="text/javascript" src="js/scripts.js?v=2"></script>
+    
+    <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</body>
+</html>
