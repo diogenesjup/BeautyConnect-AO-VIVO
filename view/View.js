@@ -92,7 +92,7 @@ class View{
                               <!-- SALA -->
                               <div class="sala">
                                  <h2>${dados.aovivo[i].nome_sala}</h2>
-                                 <a href="javascript:void(0)" onclick="app.ativarPreviewSala(${dados.aovivo[i].id})" title="${dados.aovivo[i].nome_sala}">
+                                 <a href="javascript:void(0)" onclick="app.verSala(${dados.aovivo[i].id})" title="${dados.aovivo[i].nome_sala}">
                                     ${dados.aovivo[i].tema}
                                  </a>
                               </div>
