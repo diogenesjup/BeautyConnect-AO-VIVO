@@ -1,6 +1,16 @@
 // INITIALIZE
 let app = new View(evento);
 
+if(localStorage.getItem("logadoAoVivo")=="sim"){
+          
+          console.log("USUÁRIO LOGADO");
+          app._loginaovivo.fadeOut(500);
+          app.resetLogin();
+
+          setTimeout("app.recarregarEvento();",2500);
+
+
+}
 
 /* ABRIR OU FECHAR O MENU SIDE */
 function fecharSideMenu(){
