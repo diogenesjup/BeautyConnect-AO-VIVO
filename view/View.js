@@ -50,7 +50,7 @@ class View{
               var request = $.ajax({
                   method: "POST",
                   url: "https://beautyconnect.com.br/api/aovivo-autenticacao.php",
-                  data:{email:email,idEvento:this._idEvento}
+                  data:{email:email,idEvento:13}
               })
               request.done(function (dados) {            
                   console.log("%c RETORNO DADOS LOGIN","background:#ff0000;color:#fff;");

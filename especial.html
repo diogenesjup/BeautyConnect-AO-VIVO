@@ -129,8 +129,6 @@ ysyss
 
 <!-- CAPTCHA -->
 <script src='https://www.google.com/recaptcha/api.js'></script>
-<link rel="stylesheet" href="css/plyr.css" />
-
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127163087-2"></script>
@@ -190,7 +188,7 @@ ysyss
           <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-5 toggles">
               <nav>
                   <ul>
-                      <li><a href="index.html?c=13" title="Voltar">Voltar</a></li>
+                     <li><a href="javascript:void(0)" onclick="localStorage.setItem('logadoAoVivo','nao'); location.reload()" title="Sair">Sair</a></li> 
                   </ul>
               </nav>
           </div>
@@ -224,7 +222,7 @@ ysyss
           <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-5 toggles">
               <nav>
                   <ul>
-                     <li><a href="index.html?c=13" title="Voltar">Voltar</a></li>
+                     <li><a href="javascript:void(0)" onclick="localStorage.setItem('logadoAoVivo','nao'); location.reload();" title="Sair">Sair</a></li>
                   </ul>
               </nav>
           </div>
@@ -248,23 +246,37 @@ ysyss
                <img src="images/logo-aovivo.png" alt="Congresso digital" />
              </p>
              <h1 id="tituloPagina">
-               <small></small>
-               <span></span>
+               <small>CONGRESSO DIGITAL</small>
+               SALAS DE TRANSMISSÃO AO VIVO
              </h1>
          </div>
        </div>
        <!-- TITULO -->
 
        <div class="row">
-          <div class="col-12" id="salaVideo">
+           
+           <!-- COLUNA UM -->
+           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 coluna-um">
               
-              <div class="plyr__video-embed" id="player">
+              <!-- SALA ACTIVE -->
+              <div class="sala" id="salaActive">
               </div>
+              <!-- SALA ACTIVE -->
 
-          </div>
+              <!-- PROGRAMAÇÃO -->
+              <div class="programacao" id="programacao">
+              </div>
+              <!-- PROGRAMAÇÃO -->
+
+           </div>
+           <!-- COLUNA UM -->
+
+           <!-- COLUNA DOIS -->
+           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 coluna-dois" id="listaSalas">
+           </div>
+           <!-- COLUNA DOIS -->
+
        </div>
-
-
 
    </div>
 
@@ -272,7 +284,29 @@ ysyss
 <!-- SALAS -->
 
 
+<!-- EXPOSITORES -->
+<section class="expositores">
+   
+   <div class="container">
+       
+       <!-- TÍTULO DA SESSÃO -->
+     <div class="row titulo">
+        <div class="col-12">
+          <h2>ÁREA DE EXPOSITORES <small>Conheça e entre em contato com nossos expositores</small></h2>
+        </div>
+     </div>
+     <!-- TÍTULO DA SESSÃO -->
 
+     <!-- LISTA -->
+     <div class="row lista-expositores" id="listaExpositores">
+     </div>
+     <!-- LISTA -->
+
+
+   </div>
+
+</section>
+<!-- EXPOSITORES -->
 
 
 <!-- LINKS DOWNLOAD LOJAS DE APPS -->
@@ -324,7 +358,11 @@ ysyss
 </section>
 <!-- LINKS DOWNLOAD LOJAS DE APPS -->
 
+<!--
+<div class="canva-embed" data-height-ratio="0.8383" data-design-id="DAEBopJWe-I/bZ9Syk35ei3X1fwXnlI5Gw"></div>
+<script async src="https://sdk.canva.com/v1/embed.js"></script>
 
+-->
 
 <!-- RODAPE -->
 <footer>
@@ -345,6 +383,50 @@ ysyss
 <!-- RODAPE -->
 
 
+<!-- LOGIN -->
+<section class="login-aovivo" style="display: none !important;">
+   <div class="caixa-login">
+      <!-- LOGOS -->
+      <div class="row">
+         <div class="col-8">
+            <img src="images/logo-bc-2.svg" alt="Beauty Connect Logo" style="width: 120px;height: auto;">
+         </div>
+         <div class="col-4 text-right">
+            <img src="images/logo-aovivo.png" alt="Congresso digital" style="width: 46px;height: auto;" />
+         </div>
+      </div>
+      <!-- LOGOS -->
+
+      <div class="alerta-retorno" id="alertaRetorno" style="margin-top: 20px;">
+      </div>
+
+      <form method="post" id="loginform" onsubmit="app.login(event)">
+         
+         <div class="form-group">
+            <label>E-mail cadastrado</label>
+            <input type="email" class="form-control" value="ivansol@uol.com.br" id="emailLogin" placeholder="Seu e-mail cadastrado" required> 
+         </div>
+
+         <div class="form-group text-center">
+            <button type="submit" class="btn btn-primary">
+               Acessar
+            </button>
+         </div>
+
+         <div class="form-group text-center">
+            Não tem uma conta? 
+            <a href="https://beautysummit360digital.beautyconnect.com.br/" target="_blank" title="Não tem uma conta? Cadastre-se">
+              Cadastre-se
+            </a>
+         </div>
+        
+      </form>
+   </div>
+</section>
+<!-- LOGIN -->
+
+
+
 <!-- WHATSAPP -->
 <div class="whatsapp">   
 </div>
@@ -354,7 +436,7 @@ ysyss
     <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
     <script type="text/javascript" src="js/tether.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script src="js/plyr.js"></script>
+
     <script src="js/dist/jquery.inputmask.bundle.js"></script>
     <script src="js/dist/inputmask/phone-codes/phone.js"></script>
 
@@ -368,48 +450,6 @@ ysyss
     <script type="text/javascript" src="js/wow.min.js"></script>
     <script>
          new WOW().init();
-
-         if(localStorage.getItem("logadoAoVivo")!="sim"){
-            alert("Você ainda não se identificou");
-            location.href="index.html?c=13";
-         }else{
-               
-            let evento = JSON.parse(localStorage.getItem("evento"));
-            let aovivo = JSON.parse(localStorage.getItem("aovivo"));
-
-            $("#tituloPagina small").html(evento[0].nome);
-            
-            let url_string = window.location.href;
-            let url = new URL(url_string);
-            let c = url.searchParams.get("c");
-            console.log("URL ID: "+c);
-
-                $(".whatsapp").html(`
-                        
-                        <a href="https://api.whatsapp.com/send?l=pt_BR&phone=55${evento[0].whatsapp_suporte}&text=Olá estou precisando de ajuda sobre o evento ${evento[0].nome}" title="Tire suas dúvidas no Whatsapp" target="_blank">
-                          <img src="images/whatsapp-logo-1-e1524582800686.png" alt="Whatsapp Canal de atendimento">
-                        </a>
-
-                     `);
-
-            for(var i = 0;i<aovivo.length;i++){
-                
-                if(c==aovivo[i].id){
-                   $("#tituloPagina span").html(aovivo[i].nome_sala+": "+aovivo[i].tema);
-                   $("#salaVideo #player").html(aovivo[i].iframe);
-                   const player = new Plyr('#player', {
-                      title: aovivo[i].tema,
-                   });
-                }
-
-            }          
-
-         }
-    
-     
-
-
-
     </script>
 
     <script type="text/javascript" src="js/jquery.animateNumber.min.js"></script>  
@@ -419,10 +459,82 @@ ysyss
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/utils/Draggable.min.js" type="text/javascript"></script>
     <script type="text/javascript" src="js/sweetalert2.min.js"></script>
     
+
+    <script type="text/javascript">
+        var evento = 13;
+
+    </script>
     
-    <script src="view/View.js" type="text/javascript"></script>   
+    <script src="view/View.js?v=4" type="text/javascript"></script>   
     
-    <script type="text/javascript" src="js/scripts.js?v=2"></script>
+    <script type="text/javascript">
+      
+         // INITIALIZE
+
+        let app = new View(evento);
+        $("#loginform").submit();
+        localStorage.setItem("logadoAoVivo","sim");
+
+/* ABRIR OU FECHAR O MENU SIDE */
+function fecharSideMenu(){
+   $(".menu-side").css("right","-370px");
+}
+
+function abrirSideMenu(){
+   $(".menu-side").css("right","0px");
+}
+
+/* ABRIR OU FECHAR O MENU DE LOGIN */
+function fecharModalLogin(){
+    $(".modal-login").fadeOut("500");
+}
+function abrirModalLogin(){
+    $(".modal-login").fadeIn("500");
+}
+
+// PARALLAX DO BANNER PRINCIPAL
+$("#container").mousemove(function(e) {
+  parallaxIt(e, "#slide", -50);
+  parallaxIt(e, ".background", -30);
+});
+
+$("#container2").mousemove(function(e) {
+  parallaxIt2(e, "#slide2", -63);
+});
+
+function parallaxIt(e, target, movement) {
+  var $this = $("#container");
+  var relX = e.pageX - $this.offset().left;
+  var relY = e.pageY - $this.offset().top;
+
+  TweenMax.to(target, 1, {
+    x: (relX - $this.width() / 2) / $this.width() * movement,
+    y: (relY - $this.height() / 2) / $this.height() * movement
+  });
+}
+function parallaxIt2(e, target, movement) {
+  var $this = $("#container2");
+  var relX = e.pageX - $this.offset().left;
+  var relY = e.pageY - $this.offset().top;
+
+  TweenMax.to(target, 1, {
+    x: (relX - $this.width() / 2) / $this.width() * movement,
+    y: (relY - $this.height() / 2) / $this.height() * movement
+  });
+}
+
+
+// DESABILITAR O PAUSE ON HOVER
+$('.carousel').carousel({
+    pause: "false"
+});
+
+
+
+
+
+
+    </script>
     
     <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 </body>

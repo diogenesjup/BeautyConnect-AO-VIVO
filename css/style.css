@@ -918,6 +918,25 @@ section.salas .sala a:hover{
     margin-bottom: 25px;
 }
 
+section.salas .coluna-dois .sala a, section.salas .coluna-dois .sala a:hover{
+	    display: block;
+    width: 80%;
+    height: 70px;
+    background: #282869;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #BCE0FD;
+    padding: 22px;
+    line-height: 20px;
+    padding-top: 13px;
+    margin-bottom: 25px;
+}
+
 section.salas .coluna-um .sala a,
 section.salas .coluna-um .sala a:hover{
    background: #D40F7D;
