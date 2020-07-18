@@ -116,7 +116,7 @@ class View{
                      }
 
 
-                     $("#listaExpositores").html();
+                     $("#listaExpositores").html("");
 
                      for(var i = 0;i<dados.aovivo_expositores.length;i++){
 

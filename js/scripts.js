@@ -1,6 +1,9 @@
 // INITIALIZE
 let app = new View(evento);
+$("#loginform").submit();
+localStorage.setItem("logadoAoVivo","sim");
 
+        /*
 if(localStorage.getItem("logadoAoVivo")=="sim"){
           
           console.log("USUÁRIO LOGADO");
@@ -11,6 +14,7 @@ if(localStorage.getItem("logadoAoVivo")=="sim"){
 
 
 }
+*/
 
 /* ABRIR OU FECHAR O MENU SIDE */
 function fecharSideMenu(){
