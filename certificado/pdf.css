@@ -1,0 +1,47 @@
+@page { 
+	sheet-size: A4-L; 
+	 margin: 0px;
+	 border-bottom: 10px solid #015c92;
+}
+
+/*---------------------------------
+	IMPORTS
+-----------------------------------*/
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700");
+@media print {
+
+ body { 
+ 	padding: 0px !important;
+
+ 	 }
+ 	 h1{
+ 	 	font-family: Arial; 
+ 	 	color:#666666;
+ 	 	text-align: center;
+ 	 	margin-left: 45px;
+ 	 	margin-right: 45px;
+ 	 	width: auto;
+ 	 	padding: 25px;
+ 	 	border:1px solid #666;
+ 	 	font-weight: 900;
+ 	 	font-size: 24px;
+ 	 }
+ 	 h1 strong{
+ 	 	font-family: Arial; 
+
+ 	 }
+ 	 .ementa{
+ 	 	margin-top: 100px;
+ 	 	padding: 25px;
+ 	 	padding-top: 0px;
+ 	 	font-family: Arial;
+ 	 	border:1px solid #666;
+ 	 	margin-left: 45px;
+ 	 	margin-right: 45px;
+ 	 }
+
+
+
+}
+
+

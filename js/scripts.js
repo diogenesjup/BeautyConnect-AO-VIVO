@@ -1,5 +1,5 @@
 // INITIALIZE
-let app = new View(evento);
+let app = new View(localStorage.getItem("aovivoIdEvento"));
 $("#loginform").submit();
 localStorage.setItem("logadoAoVivo","sim");
 

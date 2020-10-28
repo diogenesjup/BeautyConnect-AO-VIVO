@@ -180,7 +180,7 @@ ysyss
           
           <!-- LOGO -->
           <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-7 logo">
-              <a href="index.html" title="Beauty Connect">
+              <a href="javascript:void(0)" class="voltar-link" title="Beauty Connect">
                   <img src="images/logo-bc.svg" alt="Beauty Connect Logo">
               </a>
           </div>
@@ -190,7 +190,7 @@ ysyss
           <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-5 toggles">
               <nav>
                   <ul>
-                      <li><a href="index.html?c=13" title="Voltar">Voltar</a></li>
+                      <li><a href="javascript:void(0)" class="voltar-link" title="Voltar">Voltar</a></li>
                   </ul>
               </nav>
           </div>
@@ -224,7 +224,7 @@ ysyss
           <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-5 toggles">
               <nav>
                   <ul>
-                     <li><a href="index.html?c=13" title="Voltar">Voltar</a></li>
+                     <li><a href="javascript:void(0)" class="voltar-link" title="Voltar">Voltar</a></li>
                   </ul>
               </nav>
           </div>
@@ -369,9 +369,9 @@ ysyss
     <script>
          new WOW().init();
 
-         if(localStorage.getItem("logadoAoVivo")!="sim"){
+         if(localStorage.getItem("logadoAoVivo2")!="sim"){
             alert("Você ainda não se identificou");
-            location.href="index.html?c=13";
+            location.href="index.html?c="+localStorage.getItem("aovivoIdEvento");
          }else{
                
             let evento = JSON.parse(localStorage.getItem("evento"));
@@ -384,6 +384,10 @@ ysyss
             let c = url.searchParams.get("c");
             console.log("URL ID: "+c);
 
+            
+
+            $(".voltar-link").attr("href","index.html?c="+localStorage.getItem("aovivoIdEvento"));
+
                 $(".whatsapp").html(`
                         
                         <a href="https://api.whatsapp.com/send?l=pt_BR&phone=55${evento[0].whatsapp_suporte}&text=Olá estou precisando de ajuda sobre o evento ${evento[0].nome}" title="Tire suas dúvidas no Whatsapp" target="_blank">
@@ -391,11 +395,13 @@ ysyss
                         </a>
 
                      `);
+                var nomeHistorico;
 
             for(var i = 0;i<aovivo.length;i++){
                 
                 if(c==aovivo[i].id){
                    $("#tituloPagina span").html(aovivo[i].nome_sala+": "+aovivo[i].tema);
+                   nomeHistorico = aovivo[i].nome_sala+": "+aovivo[i].tema;
                    $("#salaVideo #player").html(aovivo[i].iframe);
                    const player = new Plyr('#player', {
                       title: aovivo[i].tema,
@@ -404,8 +410,26 @@ ysyss
 
             }          
 
+
+              // INICIO CHAMADA AJAX
+              var request = $.ajax({
+                  method: "POST",
+                  url: "https://beautyconnect.com.br/api/aovivo-historico.php",
+                  data:{sala:nomeHistorico,idEvento:localStorage.getItem("aovivoIdEvento"),idUsuario:localStorage.getItem("aoVivoIdUsuario")}
+              })
+              request.done(function (dados) {            
+                  console.log("%c RETORNO DADOS SALVAR HISTORICO","background:#ff0000;color:#fff;");
+                  console.log(dados);
+               });
+              request.fail(function (dados) {
+                   console.log("API NÃO DISPONÍVEL (SALVAR HISTÓRICO ACESSO)");
+              });
+              // FINAL CHAMADA AJAX
+
+
+
          }
-    
+        
      
 
 

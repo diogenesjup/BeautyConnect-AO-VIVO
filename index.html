@@ -188,7 +188,9 @@ ysyss
           <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-5 toggles">
               <nav>
                   <ul>
-                    <li><a href="javascript:void(0)" onclick="localStorage.setItem('logadoAoVivo','nao'); location.reload()" title="Atualizar">Atualizar</a></li> 
+                    <li><a href="javascript:void()" class="btnCertificado btn btn-primary " style="color:#fff !important;animation-duration:2.0s" title="Certificado">Certificado</a></li> 
+
+                    <li><a href="javascript:void(0)" onclick="localStorage.setItem('logadoAoVivo2','nao'); localStorage.clear(); location.reload()" title="Sair">Sair</a></li> 
                   </ul>
               </nav>
           </div>
@@ -222,7 +224,10 @@ ysyss
           <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-5 toggles">
               <nav>
                   <ul>
-                     <li><a href="javascript:void(0)" onclick="location.reload();" title="Atualizar">Atualizar</a></li>
+
+                     <li><a href="javascript:void()" class="btnCertificado btn btn-primary " title="Certificado" style="color: #fff !important;animation-duration:2.0s">Certificado</a></li> 
+
+                     <li><a href="javascript:void(0)" onclick="localStorage.setItem('logadoAoVivo2','nao'); localStorage.clear(); location.reload()" title="Sair">Sair</a></li>
                   </ul>
               </nav>
           </div>
@@ -405,7 +410,7 @@ ysyss
 
 
 <!-- LOGIN -->
-<section class="login-aovivo" style="display: none !important;">
+<section class="login-aovivo">
    <div class="caixa-login">
       <!-- LOGOS -->
       <div class="row">
@@ -425,7 +430,7 @@ ysyss
          
          <div class="form-group">
             <label>E-mail cadastrado</label>
-            <input type="email" class="form-control" value="ivansol@uol.com.br" id="emailLogin" placeholder="Seu e-mail cadastrado" required> 
+            <input type="email" class="form-control" id="emailLogin" placeholder="Seu e-mail cadastrado" required> 
          </div>
 
          <div class="form-group text-center">
@@ -493,8 +498,14 @@ ysyss
          // INITIALIZE
 
         let app = new View(evento);
-        $("#loginform").submit();
-        localStorage.setItem("logadoAoVivo","sim");
+        if(localStorage.getItem("aoVivoIdUsuario")!==null){
+          $(".login-aovivo").hide();
+          $("#loginform").submit();
+        }else{
+          localStorage.clear("emailLogado");
+        }
+        //$("#loginform").submit();
+        //localStorage.setItem("logadoAoVivo","sim");
 
 /* ABRIR OU FECHAR O MENU SIDE */
 function fecharSideMenu(){

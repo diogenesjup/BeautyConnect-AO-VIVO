@@ -17,6 +17,12 @@ class View{
          console.log("URL ID: "+c);
 
          this._idEvento = c;
+         localStorage.setItem("aovivoIdEvento",c);
+
+         if(this._idEvento===null){
+          alert("URL Inválida!");
+          location.href="https://beautyconnect.com.br/";
+         }
 
      }
       
@@ -38,19 +44,30 @@ class View{
         console.log("INICIANDO LOGIN...");
         evento.preventDefault();
      	this.carregamento();        
+      
+      if(localStorage.getItem("emailLogado")===null){
+     	   var email = $("#emailLogin").val();
+         localStorage.setItem("emailLogado",email);
+      }else{
+        var email = localStorage.getItem("emailLogado");
+      }
 
-     	var email = $("#emailLogin").val();
-      localStorage.setItem("emailLogado",email);
+      var validEmail = $("#emailLogin").val();
+
+      if(validEmail!="" && validEmail!==null){
+        email = validEmail;
+      }
 
      	var scopo = this;
 
      	console.log("E-MAIL DE LOGIN: "+email);
+      console.log("ID EVENTO: "+this._idEvento);
 
      	      // INICIO CHAMADA AJAX
               var request = $.ajax({
                   method: "POST",
                   url: "https://beautyconnect.com.br/api/aovivo-autenticacao.php",
-                  data:{email:email,idEvento:13}
+                  data:{email:email,idEvento:this._idEvento}
               })
               request.done(function (dados) {            
                   console.log("%c RETORNO DADOS LOGIN","background:#ff0000;color:#fff;");
@@ -58,10 +75,14 @@ class View{
 
                   if(dados.sucesso==200){
                   	 scopo.loginSucesso();
+                     localStorage.setItem("aoVivoIdUsuario",dados.id_usuario);
                   	 localStorage.setItem("evento",JSON.stringify(dados.evento));
                   	 localStorage.setItem("aovivo",JSON.stringify(dados.aovivo));
                      localStorage.setItem("aovivo_expositores",JSON.stringify(dados.aovivo_expositores));
-                     localStorage.setItem("logadoAoVivo","sim");
+                     localStorage.setItem("logadoAoVivo2","sim");
+
+                     $(".btnCertificado").attr("href","../certificado/certificado.php?nome="+dados.nome);
+                     console.log("NOME: "+dados.nome);
 
                      $(".whatsapp").html(`
                         
@@ -86,7 +107,7 @@ class View{
 
                      $("#programacao").html(`
 
-                          <h2 class="titulo">Programação - ${dados.aovivo[0].nome_sala}</h2>
+                          <h2 class="titulo">${dados.aovivo[0].tema}</h2>
                           <div class="scroll" id="scroll">
                              
                              ${dados.aovivo[0].programacao}
