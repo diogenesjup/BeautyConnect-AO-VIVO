@@ -180,7 +180,7 @@ ysyss
           
           <!-- LOGO -->
           <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-7 logo">
-              <a href="javascript:void(0)" class="voltar-link" title="Beauty Connect">
+              <a href="javascript:history.back(1)" class="voltar-link" title="Beauty Connect">
                   <img src="images/logo-bc.svg" alt="Beauty Connect Logo">
               </a>
           </div>
@@ -190,7 +190,7 @@ ysyss
           <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-5 toggles">
               <nav>
                   <ul>
-                      <li><a href="javascript:void(0)" class="voltar-link" title="Voltar">Voltar</a></li>
+                      <li><a href="javascript:history.back(1)" class="voltar-link" title="Voltar">Voltar</a></li>
                   </ul>
               </nav>
           </div>
@@ -224,7 +224,7 @@ ysyss
           <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-5 toggles">
               <nav>
                   <ul>
-                     <li><a href="javascript:void(0)" class="voltar-link" title="Voltar">Voltar</a></li>
+                     <li><a href="javascript:history.back(1)" class="voltar-link" title="Voltar">Voltar</a></li>
                   </ul>
               </nav>
           </div>
@@ -352,6 +352,11 @@ ysyss
 
 
     <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+    <script>
+      if(localStorage.getItem("urlOrigin")!==null){
+      $(".voltar-link").attr("href",localStorage.getItem("urlOrigin"));
+      }
+    </script>
     <script type="text/javascript" src="js/tether.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script src="js/plyr.js"></script>
@@ -369,6 +374,8 @@ ysyss
     <script>
          new WOW().init();
 
+         setTimeout(function(){ 
+
          if(localStorage.getItem("logadoAoVivo2")!="sim"){
             alert("Você ainda não se identificou");
             location.href="index.html?c="+localStorage.getItem("aovivoIdEvento");
@@ -385,8 +392,9 @@ ysyss
             console.log("URL ID: "+c);
 
             
-
-            $(".voltar-link").attr("href","index.html?c="+localStorage.getItem("aovivoIdEvento"));
+            if(localStorage.getItem("urlOrigin")!==null){
+            $(".voltar-link").attr("href",localStorage.getItem("urlOrigin"));
+            }
 
                 $(".whatsapp").html(`
                         
@@ -415,7 +423,7 @@ ysyss
               var request = $.ajax({
                   method: "POST",
                   url: "https://beautyconnect.com.br/api/aovivo-historico.php",
-                  data:{sala:nomeHistorico,idEvento:localStorage.getItem("aovivoIdEvento"),idUsuario:localStorage.getItem("aoVivoIdUsuario")}
+                  data:{sala:nomeHistorico,idEvento:evento[0].id,idUsuario:localStorage.getItem("aoVivoIdUsuario")}
               })
               request.done(function (dados) {            
                   console.log("%c RETORNO DADOS SALVAR HISTORICO","background:#ff0000;color:#fff;");
@@ -430,7 +438,24 @@ ysyss
 
          }
         
+
+        }, 3000);
      
+
+         setTimeout(function(){ 
+          if(localStorage.getItem("urlOrigin")!==null){
+          $(".voltar-link").attr("href",localStorage.getItem("urlOrigin"));
+          }
+        }, 1000);
+
+        
+        if(localStorage.getItem("urlOrigin")!==null){
+        $(".voltar-link").attr("href",localStorage.getItem("urlOrigin"));
+        }
+
+        
+
+         
 
 
 
